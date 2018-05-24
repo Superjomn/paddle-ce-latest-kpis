@@ -69,12 +69,12 @@ def prepare_data(data_type="imdb",
 
     if data_type == "imdb":
         train_reader = paddle.batch(
-            paddle.reader.shuffle(
+                paddle.reader.shuffle(
                 paddle.dataset.imdb.train(word_dict), buf_size=buf_size),
             batch_size=batch_size)
 
         test_reader = paddle.batch(
-            paddle.reader.shuffle(
+                paddle.reader.shuffle(
                 paddle.dataset.imdb.test(word_dict), buf_size=buf_size),
             batch_size=batch_size)
 
